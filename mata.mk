@@ -3,8 +3,11 @@ LOCAL_KERNEL := device/essential/mata/Image.gz-dtb
 $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 # Legacy GSI relax the compatible property checking
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := false
+
+ifneq ($(PLATFORM_VERSION),10)
 # Support addtional Q VNDK packages
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
+endif
 
 # Include Essential audio assets
 $(call inherit-product-if-exists, vendor/essential/apps/assets/sounds/audio.mk)
