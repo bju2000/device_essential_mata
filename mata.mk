@@ -1,6 +1,6 @@
 LOCAL_KERNEL := device/essential/mata/Image.gz-dtb
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 # Legacy GSI relax the compatible property checking
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := false
 # Support addtional Q VNDK packages
